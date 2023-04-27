@@ -1,19 +1,23 @@
+@Library("variablesGroovy") _
+
 pipeline {
     agent any
    
     stages {
         stage('Checkout') {
             steps{
-                
-                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/TareaMaven.git']])
-                
+                script{
+                    variables.check
+                } 
             }
         }
 
         stage('Build') {
             steps{
             
-                sh 'mvn clean package'
+                script{
+                    variables.crPackage
+                } 
             
             }
         }
@@ -21,7 +25,9 @@ pipeline {
         stage('Test') {
             steps{
             
-                sh 'mvn test'
+                script{
+                    variables.testUni
+                } 
             
             }
         }
