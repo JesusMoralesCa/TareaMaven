@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps{
                 script{
-                    sh 
+                    variables.check
                 } 
             }
         }
