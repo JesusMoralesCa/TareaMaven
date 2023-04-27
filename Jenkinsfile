@@ -1,10 +1,12 @@
 pipeline {
-    agent none
-
+    agent any
+    
+   
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JesusMoralesCa/TareaMaven.git']])
+
             }
         }
 
