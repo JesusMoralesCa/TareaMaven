@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent Jenkins
 
     stages {
         stage('Checkout') {
