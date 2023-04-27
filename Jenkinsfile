@@ -2,16 +2,16 @@
 
 pipeline {
     agent any
-   
+   /*
     stages {
         stage('Checkout') {
             steps{
                 script{
-                    variables.check
+                    sh 
                 } 
             }
         }
-
+*/
         stage('Build') {
             steps{
             
