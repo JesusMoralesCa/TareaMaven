@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps{
                 script{
-                    variables.check
+                    variables.check()
                 } 
             }
         }
@@ -16,7 +16,7 @@ pipeline {
             steps{
             
                 script{
-                    variables.crPackage
+                    variables.crPackage()
                 } 
             
             }
@@ -26,7 +26,7 @@ pipeline {
             steps{
             
                 script{
-                    variables.testUni
+                    variables.testUni()
                 } 
             
             }
