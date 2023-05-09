@@ -10,6 +10,8 @@ COPY src/ ./src/
 
 RUN apt-get update && apt-get install -y maven
 
+RUN mvn compile
+
 RUN mvn package
 
 EXPOSE 8080
