@@ -7,10 +7,10 @@ COPY pom.xml .
 RUN mvn dependency:go-offline
 
 COPY src/ ./src/
+COPY target/ ./target
 
 RUN apt-get update && apt-get install -y maven
 
-RUN mvn compile
 
 RUN mvn package
 
