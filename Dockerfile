@@ -9,6 +9,4 @@ COPY target/ ./target
 
 RUN mvn package
 
-EXPOSE 8080
-
 CMD ["java", "-jar", "/app/target/hola-mundo-2.0-SNAPSHOT.jar"]
