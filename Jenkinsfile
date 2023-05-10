@@ -28,14 +28,13 @@ pipeline {
                   MavenTest()
             }
         }
-    }
-       
-stage('Build') {
+
+        stage('Build') {
             steps {
                   DockerBuild()
             }
         }
-    }
+    
     
 stage('Deploy') {
             steps {
@@ -44,7 +43,7 @@ stage('Deploy') {
             }
         }
     }
-
+       
     
     post {
         always {
