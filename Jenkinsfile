@@ -22,14 +22,29 @@ pipeline {
             }
         }
 
-stage('Build') {
+ stage('Test') {
             steps {
-                script {
-                  W2Build()
-                }
+                  MavenCleanPackage()
+                  MavenTest()
             }
         }
     }
+       
+stage('Build') {
+            steps {
+                  DockerBuild()
+            }
+        }
+    }
+    
+stage('Deploy') {
+            steps {
+                  DockerHubLogin()
+                  DockerPush()
+            }
+        }
+    }
+
     
     post {
         always {
